@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 for a in range(97, 123):
-    c = "{}".format(chr(a))
-    if c == 'q' or c == 'e':
+    if a == 101 or a == 113:
         pass
+    c = "{}".format(chr(a))
     print(c, end='')
