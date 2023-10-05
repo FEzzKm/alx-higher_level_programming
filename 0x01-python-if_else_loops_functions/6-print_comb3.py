@@ -4,4 +4,4 @@ for a in range(9):
         print(89)
     else:
         for n in range(a+1, 10):
-        print(f"{a}{n}", end=', ')
+            print("{}{}".format(a, n), end=', ')
