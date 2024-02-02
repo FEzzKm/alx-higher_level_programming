@@ -8,41 +8,48 @@ Importing the function from the module:
 	>>> matrix_divided = __import__("2-matrix_divided").matrix_divided
 
 Checking None as matrix:
-	 >>> matrix_divided(None, 1)
-	 Traceback (most recent call last):
-         ...
-         TypeError: matrix must be a matrix (list of lists) of integers/floats
+	>>> matrix_divided(None, 1)
+	Traceback (most recent call last):
+        ...
+        TypeError: matrix must be a matrix (list of lists) of integers/floats
 
 Checking None as div:
-	 >>> matrix = [[5, 2, 3], [4, 7, 6]]
-	 >>> matrix_divided(matrix, None)
-	 Traceback (most recent call last):
-         ...
-	 TypeError: div must be a number
+	>>> matrix = [[5, 2, 3], [4, 7, 6]]
+	>>> matrix_divided(matrix, None)
+	Traceback (most recent call last):
+        ...
+	TypeError: div must be a number
 
 Checking matrix as list:
-	 >>> matrix_divided("matrix", 1)
-	 Traceback (most recent call last):
-         ...
-         TypeError: matrix must be a matrix (list of lists) of integers/floats
+	>>> matrix_divided("matrix", 1)
+	Traceback (most recent call last):
+        ...
+        TypeError: matrix must be a matrix (list of lists) of integers/floats
 
 Checking for list of mixed list and non-list items:
-	 >>> matrix = [[1, 2, 3], "list"]
-	 >>> matrix_divided(matrix, 1)
-	 Traceback (most recent call last):
-         ...
-         TypeError: matrix must be a matrix (list of lists) of integers/floats
+	>>> matrix = [[1, 2, 3], "list"]
+	>>> matrix_divided(matrix, 1)
+	Traceback (most recent call last):
+        ...
+        TypeError: matrix must be a matrix (list of lists) of integers/floats
 
 Checking for uneven matrix:
-	 >>> matrix = [[1, 2, 3], [4, 5, 6, 7]]
-	 >>> matrix_divided(matrix, 3)
-	 Traceback (most recent call last):
-         ...
-	 TypeError: Each row of the matrix must have the same size
+	>>> matrix = [[1, 2, 3], [4, 5, 6, 7]]
+	>>> matrix_divided(matrix, 3)
+	Traceback (most recent call last):
+        ...
+	TypeError: Each row of the matrix must have the same size
 
 Checking for mix of ints, floats, and bool:
-	 >>> matrix = [[1, True, 3.4], [False, 7, 6.8]]
-         >>> matrix_divided(matrix, 11)
-         Traceback (most recent call last):
-         ...
-         TypeError: matrix must be a matrix (list of lists) of integers/floats
+	>>> matrix = [[1, True, 3.4], [False, 7, 6.8]]
+        >>> matrix_divided(matrix, 11)
+        Traceback (most recent call last):
+        ...
+        TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Checking for division by zero:
+	>>> matrix = [[1, 2, 3], [4, 5, 6]]
+	>>> matrix_divided(matrix, 0)
+	Traceback (most recent call last):
+	...
+	ZeroDivisionError: division by zero
